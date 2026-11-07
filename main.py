@@ -1,4 +1,7 @@
 
+from quiz_data import create_default_quizzes
+
+
 def show_menu():
     print("\n========================================")
     print("       나만의 Python 퀴즈 게임")
@@ -11,13 +14,52 @@ def show_menu():
     print("========================================")
 
 
+def play_quiz(quizzes):
+    if not quizzes:
+        print("등록된 퀴즈가 없습니다.")
+        return
+
+    score = 0
+    total = len(quizzes)
+
+    print(f"\n퀴즈를 시작합니다! (총 {total}문제)")
+
+    for number, quiz in enumerate(quizzes, start=1):
+        print(f"\n[문제 {number}]")
+        quiz.show()
+
+        while True:
+            answer = input("정답 입력 (1-4): ").strip()
+
+            if answer in ["1", "2", "3", "4"]:
+                answer = int(answer)
+                break
+
+            print("1-4 사이의 숫자를 입력하세요.")
+
+        if quiz.check_answer(answer):
+            print("정답입니다!")
+            score += 1
+        else:
+            print(f"오답입니다. 정답은 {quiz.answer}번입니다.")
+
+    percentage = score / total * 100
+
+    print("\n========================================")
+    print(f"결과: {total}문제 중 {score}문제 정답!")
+    print(f"점수: {percentage:.0f}점")
+    print("========================================")
+
+
 def main():
+    quizzes = create_default_quizzes()
+
     while True:
         show_menu()
         choice = input("메뉴를 선택하세요 (1-5): ").strip()
 
         if choice == "1":
-            print("퀴즈 풀기 기능은 준비 중입니다.")
+            play_quiz(quizzes)
         elif choice == "2":
             print("퀴즈 추가 기능은 준비 중입니다.")
         elif choice == "3":
