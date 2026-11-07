@@ -1,0 +1,11 @@
+# Python 캐시
+__pycache__/
+*.pyc
+
+# Python 가상환경
+.venv/
+venv/
+
+# 개발 도구 및 운영체제 임시 파일
+.vscode/
+.DS_Store
