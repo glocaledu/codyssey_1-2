@@ -15,6 +15,7 @@ def show_menu():
     print("========================================")
 
 
+
 def play_quiz(quizzes):
     if not quizzes:
         print("등록된 퀴즈가 없습니다.")
@@ -50,7 +51,49 @@ def play_quiz(quizzes):
     print(f"결과: {total}문제 중 {score}문제 정답!")
     print(f"점수: {percentage:.0f}점")
     print("========================================")
+  
+def play_quiz(quizzes, best_score):
+    if not quizzes:
+        print("등록된 퀴즈가 없습니다.")
+        return best_score
 
+    score = 0
+    total = len(quizzes)
+
+    print(f"\n퀴즈를 시작합니다! (총 {total}문제)")
+
+    for number, quiz in enumerate(quizzes, start=1):
+        print(f"\n[문제 {number}]")
+        quiz.show()
+
+        while True:
+            answer = input("정답 입력 (1-4): ").strip()
+
+            if answer in ["1", "2", "3", "4"]:
+                answer = int(answer)
+                break
+
+            print("1-4 사이의 숫자를 입력하세요.")
+
+        if quiz.check_answer(answer):
+            print("정답입니다!")
+            score += 1
+        else:
+            print(f"오답입니다. 정답은 {quiz.answer}번입니다.")
+
+    percentage = round(score / total * 100)
+
+    print("\n========================================")
+    print(f"결과: {total}문제 중 {score}문제 정답!")
+    print(f"점수: {percentage}점")
+
+    if best_score is None or percentage > best_score:
+        best_score = percentage
+        print("새로운 최고 점수입니다!")
+
+    print("========================================")
+
+    return best_score
 
 def show_quiz_list(quizzes):
     if not quizzes:
@@ -105,22 +148,28 @@ def add_quiz(quizzes):
     print("퀴즈가 추가되었습니다!")
     print(f"현재 등록된 퀴즈: {len(quizzes)}개")
 
+def show_best_score(best_score):
+    if best_score is None:
+        print("\n아직 퀴즈를 풀지 않았습니다.")
+    else:
+        print(f"\n최고 점수: {best_score}점")
 
 def main():
     quizzes = create_default_quizzes()
+    best_score = None
 
     while True:
         show_menu()
         choice = input("메뉴를 선택하세요 (1-5): ").strip()
 
         if choice == "1":
-            play_quiz(quizzes)
+            best_score = play_quiz(quizzes, best_score)
         elif choice == "2":
             add_quiz(quizzes)
         elif choice == "3":
             show_quiz_list(quizzes)
         elif choice == "4":
-            print("점수 확인 기능은 준비 중입니다.")
+             show_best_score(best_score)
         elif choice == "5":
             print("게임을 종료합니다.")
             break
