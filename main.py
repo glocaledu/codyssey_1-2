@@ -1,4 +1,5 @@
 
+from quiz import Quiz
 from quiz_data import create_default_quizzes
 
 
@@ -50,6 +51,45 @@ def play_quiz(quizzes):
     print(f"점수: {percentage:.0f}점")
     print("========================================")
 
+def add_quiz(quizzes):
+    print("\n새로운 퀴즈를 추가합니다.")
+
+    while True:
+        question = input("문제를 입력하세요: ").strip()
+
+        if question:
+            break
+
+        print("문제는 비워둘 수 없습니다.")
+
+    choices = []
+
+    for number in range(1, 5):
+        while True:
+            choice = input(f"선택지 {number}: ").strip()
+
+            if choice:
+                choices.append(choice)
+                break
+
+            print("선택지는 비워둘 수 없습니다.")
+
+    while True:
+        answer = input("정답 번호 (1-4): ").strip()
+
+        if answer in ["1", "2", "3", "4"]:
+            answer = int(answer)
+            break
+
+        print("1-4 사이의 숫자를 입력하세요.")
+
+    new_quiz = Quiz(question, choices, answer)
+
+    quizzes.append(new_quiz)
+
+    print("퀴즈가 추가되었습니다!")
+    print(f"현재 등록된 퀴즈: {len(quizzes)}개")
+
 
 def main():
     quizzes = create_default_quizzes()
@@ -61,7 +101,7 @@ def main():
         if choice == "1":
             play_quiz(quizzes)
         elif choice == "2":
-            print("퀴즈 추가 기능은 준비 중입니다.")
+            add_quiz(quizzes)
         elif choice == "3":
             print("퀴즈 목록 기능은 준비 중입니다.")
         elif choice == "4":
