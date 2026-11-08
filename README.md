@@ -189,6 +189,7 @@ https://github.com/glocaledu/codyssey_1-2
 
 ## Git Clone & Pull 실습
 GitHub 저장소를 clone하고, 복제본에서 수정한 내용을 원본 저장소에 반영하는 실습을 완료했습니다.
+```
 
 ### Git Clone 실습
 
