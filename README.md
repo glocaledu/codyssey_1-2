@@ -172,6 +172,14 @@ https://github.com/glocaledu/codyssey_1-2
 
 ![오류 처리](docs/screenshots/09-error_handling.png)
 
+### Git Clone 실습
+
+![Git Clone 실습](docs/screenshots/10-git_clone.png)
+
+### Git Pull 실습
+
+![Git Pull 실습](docs/screenshots/11-git_pull.png)
+
 ## 10. 학습 내용
 
 이번 프로젝트를 통해 다음 내용을 학습했습니다.
