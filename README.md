@@ -172,13 +172,7 @@ https://github.com/glocaledu/codyssey_1-2
 
 ![오류 처리](docs/screenshots/09-error_handling.png)
 
-### Git Clone 실습
 
-![Git Clone 실습](docs/screenshots/10-git_clone.png)
-
-### Git Pull 실습
-
-![Git Pull 실습](docs/screenshots/11-git_pull.png)
 
 ## 10. 학습 내용
 
@@ -195,3 +189,11 @@ https://github.com/glocaledu/codyssey_1-2
 
 ## Git Clone & Pull 실습
 GitHub 저장소를 clone하고, 복제본에서 수정한 내용을 원본 저장소에 반영하는 실습을 완료했습니다.
+
+### Git Clone 실습
+
+![Git Clone 실습](docs/screenshots/10-git_clone.png)
+
+### Git Pull 실습
+
+![Git Pull 실습](docs/screenshots/11-git_pull.png)
