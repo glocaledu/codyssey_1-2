@@ -1,0 +1,75 @@
+{
+    "quizzes": [
+        {
+            "question": "Python에서 화면에 글자를 출력하는 함수는?",
+            "choices": [
+                "input()",
+                "print()",
+                "open()",
+                "return()"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "Python에서 여러 데이터를 순서대로 저장하는 자료형은?",
+            "choices": [
+                "int",
+                "bool",
+                "list",
+                "str"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "Python에서 조건을 판단할 때 사용하는 키워드는?",
+            "choices": [
+                "for",
+                "def",
+                "class",
+                "if"
+            ],
+            "answer": 4
+        },
+        {
+            "question": "Git에서 변경사항을 기록하는 명령어는?",
+            "choices": [
+                "git commit",
+                "git clone",
+                "git pull",
+                "git status"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "Docker에서 컨테이너의 실행 기반이 되는 것은?",
+            "choices": [
+                "Volume",
+                "Image",
+                "Branch",
+                "Commit"
+            ],
+            "answer": 2
+        },
+        {
+            "question": "파이썬 영어 표기",
+            "choices": [
+                "python",
+                "pyython",
+                "pyyython",
+                "pyyyython"
+            ],
+            "answer": 1
+        },
+        {
+            "question": "파이썬은 이란?",
+            "choices": [
+                "초코파이 일종",
+                "쿠키 일종",
+                "버섯 일종",
+                "프로그래밍 언어"
+            ],
+            "answer": 4
+        }
+    ],
+    "best_score": 86
+}
